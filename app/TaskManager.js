@@ -11,6 +11,7 @@ import { addTask, deleteTask, toggleTaskCompletion, updateTask } from './taskSli
 
 const TaskManager = ({ initialState }) => {
     const [InitTasks, setInitTasks] = useState(initialState)
+    
     const [IsTaskCreating, setIsTaskCreating] = useState(false)
     const [editingTask, setEditingTask] = useState(null);
     const [IsEditing, setIsEditing] = useState(false)
@@ -25,13 +26,14 @@ const TaskManager = ({ initialState }) => {
     const CompletedTask = tasks.filter(task=>task.completed===true)
     const PendingTask = tasks.filter(task=>task.completed===false)
     
-    console.log('Toatal task is ', TotalTask)
-    console.log('Completed task is ', CompletedTask.length)
+    // console.log('Toatal task is ', TotalTask)
+    // console.log('Completed task is ', CompletedTask.length)
 
     const dispatch = useDispatch();
-
+    //  dispatch(addTask(initialState))
 
 useEffect(() => {
+    
     const storedTasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) :[]
     ;
     console.log("Stored task ",storedTasks)
@@ -39,8 +41,8 @@ useEffect(() => {
         storedTasks.forEach(task => dispatch(addTask(task)));
     }
 
-    console.log("Initial task",InitTasks)
-}, [dispatch]);
+    // console.log("Initial task",InitTasks)
+});
 
 useEffect(() => {
     
@@ -116,7 +118,7 @@ useEffect(() => {
             setMenuOpen(!MenuOpen)
             const sortedTasks = [...tasks].sort((a, b) => {
                 const priorityOrder = { High: 1, Medium: 2, Low: 3 };
-                return priorityOrder[a.priority] - priorityOrder[b.priority];
+                return priorityOrder[a.priority] - priorityOrder[b.priority]
             });
             setFilteredData(sortedTasks)
             console.log(sortedTasks)

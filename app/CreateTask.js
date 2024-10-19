@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from 'react';
-// import './global.css'; // Import the global CSS file
 
 const CreateTask = ({onSave, task,isEditing,isTaskCreating}) => {
   const [title, setTitle] = useState(task?task.title:'');
@@ -51,7 +50,6 @@ const CreateTask = ({onSave, task,isEditing,isTaskCreating}) => {
           />
         </div>
 
-        {/* Description Field */}
         <div className='form-group'>
           <label htmlFor='description'>Description</label>
           <textarea
@@ -63,7 +61,6 @@ const CreateTask = ({onSave, task,isEditing,isTaskCreating}) => {
           />
         </div>
 
-        {/* Priority Field */}
         <div className='form-group'>
           <label htmlFor='priority'>Priority</label>
           <select
