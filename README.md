@@ -1,19 +1,21 @@
-Task Management App
-A task management application built with Next.js and Redux for managing tasks effectively. This app allows users to create, edit, delete, and manage tasks with various features like filtering, sorting, and searching.
+# Task Management App
 
-Prerequisites
-Node.js (version 14.x or later)
-npm (Node Package Manager, comes with Node.js)
+A task management application built with **Next.js** and **Redux** for managing tasks effectively. This app allows users to create, edit, delete, and manage tasks with various features like filtering, sorting, and searching.
 
+## Prerequisites
 
+- **Node.js** (version 14.x or later)
+- **npm** (Node Package Manager, comes with Node.js)
 
-Setup Instructions:- 
+## Setup Instructions
 
-1.Clone the Repository
+### 1. Clone the Repository
 
 Open your terminal and run the following command to clone the repository:
 
-[text](https://github.com/Rahullchaudharyy/Task-Managment-App.git)
+```bash
+git clone https://github.com/Rahullchaudharyy/Task-Managment-App.git
+
 
 2.Navigate to the Project Directory
 
