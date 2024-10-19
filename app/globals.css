@@ -3,12 +3,12 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 html,
 body {
@@ -22,6 +22,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 * {
@@ -40,3 +41,383 @@ a {
     color-scheme: dark;
   }
 }
+
+
+
+#Right-Panel::-webkit-scrollbar{
+  display: none;
+}
+
+#Main-Div {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(18, 18, 18);
+  display: flex;
+  gap: 5vmin;
+  padding: 4vmin;
+}
+#Main-Container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 85%;
+  background-color: rgb(46, 46, 46);
+  border-radius: 15px;
+}
+
+#Left-Panel {
+  height: 100%;
+  width: 15%;
+  background-color: rgb(46, 46, 46);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+   justify-content: start;
+   align-items: center;
+   padding: 30px;
+   gap: 25px;
+}
+#Left-Panel h1 {
+  color: white;
+  font-size: 1.5vw; /* Adjust based on viewport width */
+  background-color: #171717;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px; /* Viewport-based padding */
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+#Left-Panel h1:hover {
+  background-color: #262626;
+}
+#Left-Panel-Mobile {
+  height: 100%;
+  width: 15%;
+  background-color: rgb(46, 46, 46);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+   justify-content: start;
+   align-items: center;
+   padding: 30px;
+   gap: 25px;
+}
+#Left-Panel-Mobile h1 {
+  color: white;
+  font-size: 1.5vw; /* Adjust based on viewport width */
+  background-color: #171717;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px; /* Viewport-based padding */
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+#Left-Panel-Mobile h1:hover {
+  background-color: #262626;
+}
+
+/* Optional: Media query for very large screens */
+@media (min-width: 1200px) {
+  #Left-Panel h1 {
+    font-size: 1rem; /* Limit the maximum size on large screens */
+  }
+}
+
+
+#Right-Panel {
+  /* height: 100%;
+  width: 85%;
+  background-color: rgb(46, 46, 46);
+  border-radius: 15px; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Set min width and auto-fill columns */
+  grid-gap: 2vmin; 
+  overflow: auto;
+  padding: 15px;
+}
+
+
+#Top-Search-Bar{
+  padding: 20px;
+  display: flex ;
+  gap: 10px;
+}
+#Top-Search-Bar input{
+padding: 20px;
+width:300px;
+}
+#Top-Search-Bar button{
+padding: 10px;
+width:100px;
+}
+#Task-Container {
+  min-height: 200px;
+  width: 100%; /* Let the width be controlled by the grid */
+  background-color: #171717;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+max-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  overflow: hidden;
+}
+#Title-Part{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+/*  */
+#Add-Task-Container{
+  height: 200px;
+  width: 280px;
+  background-color: #171717;
+  color:white;
+  border-radius: 15px;
+  /* border: color(srgb red green blue); */
+  cursor: pointer;
+  border-style: dotted;
+  /* padding: 10px; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  /* gap: 30px; */
+ 
+}
+
+#Add-Task-Container h1{
+  font-size: 20px;
+  font-weight: 100;
+  user-select: none;
+}
+#Task-Container h1{
+  font-size: 15px;
+}
+#Tools{
+  width: 100%;
+  /* background-color: gray; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ padding: 5px;
+}
+#Edit-btn,#Delete-btn{
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50px;
+  font-size: large;
+  cursor: pointer;
+
+  /* border-radius: 50px; */
+}
+#Status-Button{
+  background-color: rgb(210, 79, 79);
+  padding: 5px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  /* border-radius: 50px; */
+}
+
+
+
+#Tools-Child{
+  display: flex;
+  gap: 20px;
+}
+
+
+
+
+/* global.css */
+
+/* Container for the task form */
+#Create-task {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  min-width: 60vmin;
+  max-width: 90vmin;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* overflow: scroll; */
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form layout and styling */
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Each form group (label and input) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Input and textarea styling */
+input, textarea, select {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  /* outline: none; */
+}
+
+/* Button styling */
+#form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2857a7;
+  color: #fff;
+  cursor: pointer;
+}
+
+#Menu-BTN{
+  display: none;
+}
+
+#Task-Count-Container {
+  display: flex;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  /* background-color: #f8f9fa; Light background */
+  background-color: #171717;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: fit-content;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+
+.task-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.task-summary :nth-child(1) {
+  padding: 10px 20px;
+  background-color: #6cb5e5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.task-summary :nth-child(2) {
+  padding: 10px 20px;
+  background-color: rgb(81, 171, 81);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.task-summary :nth-child(3) {
+  padding: 10px 20px;
+  background-color:yellow ;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#Task-Count-Container:hover {
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+
+@media (max-width:667px) {
+  #Left-Panel{
+    height: auto;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    background-color: rgb(46, 46, 46);
+    border-radius: 15px;
+    display:none;
+  }
+  #Left-Panel-Mobile{
+    height: auto;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    background-color: rgb(46, 46, 46);
+    border-radius: 15px;
+    /* display:none; */
+  }
+  #Menu-BTN{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #Right-Panel{
+    height: 100%;
+    width: 100%;
+    background-color:  rgb(46, 46, 46);
+    border-radius: 15px;
+    
+  
+  }
+  #Main-Container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(46, 46, 46);
+    border-radius: 15px;
+  }
+  #Top-Search-Bar input{
+    padding: 20px;
+    width:50vmin;
+    }
+  
+  
+}
+
+
